@@ -1,20 +1,7 @@
-// ===================================================
-//  << User Model File >>
-// ===================================================
-//  Author: Lucas Vallejo
-//  Email: lucasvallejo92@gmail.com
-// ===================================================
-//  Imports ->
-// ===================================================
-
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
 const Schema = mongoose.Schema;
-
-// ===================================================
-//  Schema ->
-// ===================================================
 
 const validRoles = {
     values: ['ADMIN_ROLE', 'USER_ROLE'],
@@ -31,8 +18,5 @@ const userSchema = new Schema({
 
 userSchema.plugin(uniqueValidator, { message: '{PATH} debe ser unico'});
 
-// ===================================================
-//  Exporting module ->
-// ===================================================
 
 module.exports = mongoose.model('user', userSchema);

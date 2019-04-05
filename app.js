@@ -34,13 +34,11 @@ mongoose.connection.openUri('mongodb://localhost:27017/blogDB', (err, res) => {
 //  Importing Routes ->
 // ===================================================
 
-const appRoutes = require('./routes/app');
 const userRoutes = require('./routes/user');
 const loginRoutes = require('./routes/login');
 
 app.use('/user', userRoutes);
 app.use('/login', loginRoutes);
-app.use('/', appRoutes);
 
 // ===================================================
 //  Starting Express Server ->
